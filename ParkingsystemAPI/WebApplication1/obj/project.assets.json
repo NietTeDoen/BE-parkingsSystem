@@ -443,9 +443,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hfhaa\\source\\repos\\BE-parkingsSystem\\ParkingsystemAPI\\WebApplication1\\WebApplication1.csproj",
-      "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\hfhaa\\source\\repos\\BE-parkingsSystem\\ParkingsystemAPI\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\hfhaa\\source\\repos\\BE-parkingsSystem\\ParkingsystemAPI\\WebApplication1\\ParkingSystemBE.csproj",
+      "projectName": "ParkingSystemBE",
+      "projectPath": "C:\\Users\\hfhaa\\source\\repos\\BE-parkingsSystem\\ParkingsystemAPI\\WebApplication1\\ParkingSystemBE.csproj",
       "packagesPath": "C:\\Users\\hfhaa\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\hfhaa\\source\\repos\\BE-parkingsSystem\\ParkingsystemAPI\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
