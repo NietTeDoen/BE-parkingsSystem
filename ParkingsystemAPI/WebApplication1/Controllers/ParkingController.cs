@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.models;
+using static ParkingSystemBE.Controllers.ParkingController;
 
 namespace ParkingSystemBE.Controllers
 {
@@ -8,6 +9,13 @@ namespace ParkingSystemBE.Controllers
     [ApiController]
     public class ParkingController : ControllerBase
     {
+
+        public class ParkingInfo
+        {
+            public User User { get; set; }
+            public ParkingPlace ParkingPlace { get; set; }
+        }
+
         [HttpGet]
         [Route("test")]
         public string APITester()
@@ -44,9 +52,9 @@ namespace ParkingSystemBE.Controllers
         }
         [HttpPost]
         [Route("get/ReserveerParkeerplaats")]
-        public bool ReserveerParkeerplaats(User user, ParkingPlace parkingPlace)
+        public bool ReserveerParkeerplaats(ParkingInfo parkingInfo)
         {
-            if (user == null || parkingPlace == null)
+            if (parkingInfo.User == null || parkingInfo.ParkingPlace == null)
                 return false;
             /*
              * here needs to go a database connection checking if the parkingplace is free
@@ -56,9 +64,9 @@ namespace ParkingSystemBE.Controllers
         }
         [HttpPost]
         [Route("get/CancelParkeerplaats")]
-        public bool CancelParkeerplaats(User user, ParkingPlace parkingPlace)
+        public bool CancelParkeerplaats(ParkingInfo parkingInfo)
         {
-            if (user == null || parkingPlace == null)
+            if (parkingInfo.User == null || parkingInfo.ParkingPlace == null)
                 return false;
             /*
              * here needs to go a database connection checking if the parkingplace is reserved
@@ -68,9 +76,9 @@ namespace ParkingSystemBE.Controllers
         }
         [HttpPost]
         [Route("get/ChangeTime")]
-        public bool ChangeTimeParkingplace(User user, ParkingPlace parkingPlace)
+        public bool ChangeTimeParkingplace(ParkingInfo parkingInfo)
         {
-            if (user == null || parkingPlace == null)
+            if (parkingInfo.User == null || parkingInfo.ParkingPlace == null)
                 return false;
             /*
              * here needs to go a database connection checking if the parkingplace is reserved
@@ -80,9 +88,9 @@ namespace ParkingSystemBE.Controllers
         }
         [HttpPost]
         [Route("get/checkout")]
-        public bool Checkout(User user, ParkingPlace parkingPlace)
+        public bool Checkout(ParkingInfo parkingInfo)
         {
-            if (user == null || parkingPlace == null)
+            if (parkingInfo.User == null || parkingInfo.ParkingPlace == null)
                 return false;
             /*
              * here needs to go a database connection checking if the parkingplace was reserved.
