@@ -9,5 +9,6 @@
         public bool Available { get; set; }
         public bool Disability { get; set; }
         public string Location { get; set; }
+        public User User { get; set; }
     }
 }

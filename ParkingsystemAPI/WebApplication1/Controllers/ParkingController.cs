@@ -30,5 +30,66 @@ namespace ParkingSystemBE.Controllers
 
             return ParkingPlaces;
         }
+        [HttpGet]
+        [Route("get/Users")]
+        public List<User> GetUsers()
+        {
+            List<User> Users = new List<User>
+            {
+            new User { UserId = 1, UserName = "bert", NummerBord = "NK23EWBF", ParkingPlace = null}
+            };
+
+
+            return Users;
+        }
+        [HttpPost]
+        [Route("get/ReserveerParkeerplaats")]
+        public bool ReserveerParkeerplaats(User user, ParkingPlace parkingPlace)
+        {
+            if (user == null || parkingPlace == null)
+                return false;
+            /*
+             * here needs to go a database connection checking if the parkingplace is free
+             * if the parking place is free push the changes and set the parkingplace on reserved
+             */
+            return true;
+        }
+        [HttpPost]
+        [Route("get/CancelParkeerplaats")]
+        public bool CancelParkeerplaats(User user, ParkingPlace parkingPlace)
+        {
+            if (user == null || parkingPlace == null)
+                return false;
+            /*
+             * here needs to go a database connection checking if the parkingplace is reserved
+             * if the parking place is reserved push the changes and set the parkingplace on free
+             */
+            return true;
+        }
+        [HttpPost]
+        [Route("get/ChangeTime")]
+        public bool ChangeTimeParkingplace(User user, ParkingPlace parkingPlace)
+        {
+            if (user == null || parkingPlace == null)
+                return false;
+            /*
+             * here needs to go a database connection checking if the parkingplace is reserved
+             * if the parking place is reserved push the changes and set the time of the parking place.
+             */
+            return true;
+        }
+        [HttpPost]
+        [Route("get/checkout")]
+        public bool Checkout(User user, ParkingPlace parkingPlace)
+        {
+            if (user == null || parkingPlace == null)
+                return false;
+            /*
+             * here needs to go a database connection checking if the parkingplace was reserved.
+             * if it was reserved and the person putted checkout then push the changes and calculate
+             * the checkout fee.
+             */
+            return true;
+        }
     }
 }
